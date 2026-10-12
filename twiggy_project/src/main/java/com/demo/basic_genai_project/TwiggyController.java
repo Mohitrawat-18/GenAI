@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-public class SummarizeController {
+public class TwiggyController {
 
-    private final SummarizeService summarizeService;
+    private final TwiggyService twiggyService;
 
-    public SummarizeController(SummarizeService summarizeService){
-        this.summarizeService = summarizeService;
+    public TwiggyController(TwiggyService twiggyService){
+        this.twiggyService = twiggyService;
     }
 
     @PostMapping("/chat")
     public String summarize(@RequestBody String message){
-        return summarizeService.chat(message);
+        return twiggyService.chat(message);
     }
 }
